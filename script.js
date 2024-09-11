@@ -44,7 +44,7 @@ form.addEventListener("submit", (event) => {
   form.submit(); 
 });
 
-cpf.addEventListener('keypress', () => {
+cpf.addEventListener('input', () => {
     let cpflength = cpf.value.length
 
     if(cpflength === 3 || cpflength === 7 ) {
