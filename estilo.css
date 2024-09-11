@@ -29,7 +29,7 @@ form {
     border-radius: 4px;
     margin-top: 100px;
     padding: 25px;
-    color:#f1ee2eed;
+    color:#781b08ed;
     box-shadow: 3px 3px 6px  rgba(0, 0, 0, 0.322);
 }
 
@@ -63,9 +63,14 @@ button {
     width: 100%;
     cursor: pointer;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     color: white;
-    padding: 8px;
+    padding: 10px;
     text-shadow: 2px 2px 3px #00000048;
     box-shadow: 2px 3px 3px #0000002f;
 }
+
+button:hover {
+    background-image: linear-gradient(to right,  #7b2114,#ba280e);
+}
+

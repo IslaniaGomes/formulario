@@ -11,7 +11,7 @@ form.addEventListener("submit", (event) => {
 
   
   if (nome.value === "") {
-    alert("Por favor, preencha seu nome.");
+    alert("Por favor, precisamos do seu nome.");
     return; 
   }
 
@@ -43,3 +43,4 @@ form.addEventListener("submit", (event) => {
   alert("O seu formulário foi enviado!");
   form.submit(); 
 });
+
