@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+        <form id="form" action="">
+                <fieldset>
+                    <legend><h2>Cadastre-se!</h2></legend>
+                    <div>
+                        <label for="nome">Nome Completo:</label>
+                        <input maxlength="30"  type="text" id="nome" name="nome" placeholder="Digite seu nome" >
+                    </div>
+                    <div>
+                        <label for="cpf">CPF:</label>
+                        <input maxlength="14" type="text" id="cpf" name="cpf" placeholder="Ex.: 000.000.000-00">
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+                    </div>
+                    <div>
+                        <label for="number">Telefone:</label>
+                        <input maxlength="11" type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone">
+                    </div>
+
+                    <div>
+                        <label for="">Crie uma senha</label>
+                        <input maxlength="10" type="password" id="senha" name="senha" placeholder="Digite sua senha">
+                    </div>
+                    <div>
+                        <label for="">Confirme sua senha</label>
+                        <input maxlength="10" type="password" id="confirm" name="senha" placeholder="Digite sua senha">
+                    </div>
+                    
+                    <div>
+                        <button 
+                        type="submit">Enviar</button>
+                    </div>
+
+                </fieldset>
+        </form>
+       
+    <footer>
+        <p></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
