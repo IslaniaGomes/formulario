@@ -44,3 +44,25 @@ form.addEventListener("submit", (event) => {
   form.submit(); 
 });
 
+cpf.addEventListener('keypress', () => {
+    let cpflength = cpf.value.length
+
+    if(cpflength === 3 || cpflength === 7 ) {
+        cpf.value += '.'
+    } else if (cpflength === 11){
+         cpf.value += '-'
+    }
+
+})
+
+telefone.addEventListener('keypress', () => {
+    let telelength = telefone.value.length
+
+    if(telelength === 0) {
+        telefone.value += '('
+    } 
+    if( telelength === 3) {
+        telefone.value += ') '
+    }
+
+})
