@@ -44,16 +44,21 @@ form.addEventListener("submit", (event) => {
   form.submit(); 
 });
 
-cpf.addEventListener('input', () => {
-    let cpflength = cpf.value.length
+cpf.addEventListener('input', (e) => {
+  let cpfValue = e.target.value;
 
-    if(cpflength === 3 || cpflength === 7 ) {
-        cpf.value += '.'
-    } else if (cpflength === 11){
-         cpf.value += '-'
-    }
+  cpfValue = cpfValue.replace(/\D/g, '');
 
-})
+  if (cpfValue.length > 3 && cpfValue.length <= 6) {
+      cpfValue = cpfValue.slice(0, 3) + '.' + cpfValue.slice(3);
+  } else if (cpfValue.length > 6 && cpfValue.length <= 9) {
+      cpfValue = cpfValue.slice(0, 3) + '.' + cpfValue.slice(3, 6) + '.' + cpfValue.slice(6);
+  } else if (cpfValue.length > 9) {
+      cpfValue = cpfValue.slice(0, 3) + '.' + cpfValue.slice(3, 6) + '.' + cpfValue.slice(6, 9) + '-' + cpfValue.slice(9, 11);
+  }
+  e.target.value = cpfValue;
+});
+
 
 telefone.addEventListener('keypress', () => {
     let telelength = telefone.value.length
