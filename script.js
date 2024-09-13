@@ -59,15 +59,22 @@ cpf.addEventListener('input', (e) => {
   e.target.value = cpfValue;
 });
 
-
 telefone.addEventListener('keypress', () => {
-    let telelength = telefone.value.length
+  let telelength = telefone.value.length
 
-    if(telelength === 0) {
-        telefone.value += '('
-    } 
-    if( telelength === 3) {
-        telefone.value += ') '
-    }
-
+  if(telelength === 0) {
+      telefone.value += '('
+  } 
+  if( telelength === 3) {
+      telefone.value += ') '
+  }
 })
+
+   let inputtele = document.getElementById('telefone');
+
+   inputtele.addEventListener('keypress', (e) => {
+    
+    if (/[a-zA-Z]/.test(e.key)) {
+        e.preventDefault();
+    }
+});
