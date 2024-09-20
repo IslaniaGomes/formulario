@@ -1,48 +1,12 @@
-const form = document.querySelector('#form');
-const nome = document.querySelector('input#nome');
-const cpf = document.querySelector('input#cpf');
-const email = document.querySelector('input#email');
+const form     = document.querySelector('#form');
+const nome     = document.querySelector('input#nome');
+const cpf      = document.querySelector('input#cpf');
+const email    = document.querySelector('input#email');
 const telefone = document.querySelector('input#telefone');
-const senha = document.querySelector('input#senha');
-const confirm = document.querySelector('input#confirm');
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  
-  if (nome.value === "") {
-    alert("Por favor, precisamos do seu nome.");
-    return; 
-  }
-
-  if (cpf.value === "") {
-    alert("Por favor, preencha seu CPF.");
-    return;
-  }
-
-  if (email.value === "") {
-    alert("Precisamos do seu e-mail.");
-    return;
-  }
-
-  if (telefone.value === "") {
-    alert("Preencha o seu telefone.");
-    return;
-  }
-
-  if (senha.value === "") {
-    alert("Você precisa criar uma senha.");
-    return;
-  }
-
-  if (confirm.value === "") {
-    alert("Por favor, confirme sua senha.");
-    return;
-  }
-
-  alert("O seu formulário foi enviado!");
-  form.submit(); 
-});
+const senha    = document.querySelector('input#senha');
+const confirm  = document.querySelector('input#confirm');
+const campos   = document.querySelectorAll('.required');
+const spans    = document.querySelectorAll('.span-required');
 
 cpf.addEventListener('input', (e) => {
   let cpfValue = e.target.value;
@@ -78,3 +42,98 @@ telefone.addEventListener('keypress', () => {
         e.preventDefault();
     }
 });
+
+form.addEventListener('submit', (event) => {
+  let formIsValid = true;
+
+  
+  if (!validaNome()) formIsValid = false;
+  if (!validaCpf()) formIsValid = false;
+  if (!validaEmail()) formIsValid = false;
+  if (!validaSenha()) formIsValid = false;
+  if (!senhaConfirm()) formIsValid = false;
+
+  
+  if (!formIsValid) {
+    event.preventDefault();
+    validaNome()
+    validaCpf()
+    validaEmail()
+    validaTel()
+    validaSenha()
+    senhaConfirm()
+  }
+});
+
+function exibeErro(index) {
+  campos[index].style.border = '2px solid #b80b0b';
+  spans[index].style.display = 'block';
+}
+
+function removeErro(index) {
+  campos[index].style.border = '';
+  spans[index].style.display = 'none';
+}
+
+function validaNome() {
+  if (campos[0].value === '') {
+    exibeErro(0);
+    return false;
+  } else {
+    removeErro(0);
+    return true;
+  }
+}
+
+function validaCpf() {
+  if (campos[1].value === '') {
+    exibeErro(1);
+    return false;
+  } else {
+    removeErro(1);
+    return true;
+  }
+}
+
+function validaEmail() {
+  if (campos[2].value === '') {
+    exibeErro(2);
+    return false;
+  } else {
+    removeErro(2);
+    return true;
+  }
+}
+
+function validaTel() {
+  if (campos[3].value === '') {
+    exibeErro(3);
+    return false;
+  } else {
+    removeErro(3);
+    return true;
+  }
+}
+
+function validaSenha() {
+  if (campos[4].value.length < 8) {
+    exibeErro(4);
+    return false;
+  } else {
+    removeErro(4);
+    return true;
+  }
+}
+
+function senhaConfirm() {
+  if (campos[5].value != campos[4].value) {
+    exibeErro(5);
+    return false;
+  } else {
+    removeErro(5);
+    return true;
+  }
+}
+
+
+

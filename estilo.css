@@ -4,7 +4,6 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 body {
@@ -13,7 +12,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
-    padding: 10px;
+    padding: 60px;
 }
 
 
@@ -25,15 +24,15 @@ fieldset {
     padding-bottom: 8px;
 }
 
-form {
+#form {
     width: 400px;
     margin: auto;
-    background-color: #d9c68b86;
+    background-color: #d9c68bb0;
     border-radius: 4px;
     margin-top: 120px;
     padding: 25px;
     color:#781b08ed;
-    box-shadow: 3px 3px 6px  rgba(0, 0, 0, 0.322);
+    box-shadow: 3px 3px 6px  #00000052;
 }
 
 
@@ -61,6 +60,13 @@ input {
     border-radius: 4px;
 }
 
+.span-required {
+    font-size: 12px;
+    display: none;
+    color: #a82109;
+    
+}
+
 button {
     background-image:linear-gradient(to right, #ba280e, #7b2114);
     width: 100%;
@@ -80,7 +86,7 @@ button:hover {
 @media (max-width: 992px) {
  
     body {
-        padding-bottom: 15px;
+        padding-bottom: 60px;
     }
 
     form {
