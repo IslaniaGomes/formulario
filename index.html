@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Formulário de Cadastro</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
@@ -32,17 +33,21 @@
                         <span class="span-required">O telefone precisa ser preenchido</span>
                     </div>
 
-                    <div>
-                        <label for="">Crie uma senha:</label>
+                    <div class="input-senha">
+                        <label for="senha">Crie uma senha:</label>
                         <input maxlength="10" type="password" id="senha" name="senha" placeholder="Digite sua senha" class="required">
-                        <span  class="span-required"> Digite uma senha(mínimo 8 caracteres)</span>
-                    </div>
-                    <div>
-                        <label for="">Confirme sua senha:</label>
+                        <i class="bi bi-eye-slash btn-senha" id="btn-senha" onclick="mostrarSenha('senha')"></i>
+                        <span class="span-required">Digite uma senha (mínimo 8 caracteres)</span>
+                      </div>
+                      
+                      <div class="input-senha">
+                        <label for="confirm">Confirme sua senha:</label>
                         <input maxlength="10" type="password" id="confirm" name="senha-confirm" placeholder="Digite sua senha" class="required">
-                        <span class="span-required"> As senhas devem ser iguais</span>
-                       
-                    </div>
+                        <i class="bi bi-eye-slash btn-senha" id="btn-confirm" onclick="mostrarSenha('confirm')"></i>
+                        <span class="span-required">As senhas devem ser iguais</span>
+                      </div>
+                      
+                      
                     
                     <div>
                         <button 

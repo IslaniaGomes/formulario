@@ -62,6 +62,8 @@ form.addEventListener('submit', (event) => {
     validaTel()
     validaSenha()
     senhaConfirm()
+  } else {
+    alert('Formulário Enviado!')
   }
 });
 
@@ -132,6 +134,19 @@ function senhaConfirm() {
   } else {
     removeErro(5);
     return true;
+  }
+}
+
+function mostrarSenha(inputId) {
+  let inputSenha = document.getElementById(inputId);
+  let mostreSenha = inputSenha.nextElementSibling;
+
+  if (inputSenha.type === 'password') {
+    inputSenha.setAttribute('type', 'text');
+    mostreSenha.classList.replace('bi-eye-slash', 'bi-eye'); 
+  } else {
+    inputSenha.setAttribute('type', 'password');
+    mostreSenha.classList.replace('bi-eye', 'bi-eye-slash'); 
   }
 }
 
